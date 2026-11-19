@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Sci-Flipper 教師資格考試練習平台｜歷屆試題線上練習</title>
+<meta name="description" content="教師資格考試（中等學校、國民小學、幼兒園、特教）教育專業科目、國語文與國小數學能力測驗歷屆試題線上練習：依類科、科目、年度、主題篩題，模擬考，錯題本與學習紀錄。非官方網站。">
+<meta name="theme-color" content="#2552c7">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://teacher-exam-practice.pages.dev/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Sci-Flipper 教師資格考試練習平台｜歷屆試題線上練習">
+<meta property="og:description" content="五個類科、94–115 年歷屆選擇題，作答後立即對答案，每題都能對照原卷。">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="教檢練習">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<script>
+  // 先套用上次選的外觀，避免閃一下白底；預設淺色
+  try { if (localStorage.getItem("tqa-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sf-bar.css">
+</head>
+<body>
+<a class="skip" href="#app">跳到主要內容</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand brand-sf" href="#/" aria-label="Sci-Flipper 教師資格考試練習平台 首頁"><img class="m-light" src="img/sf-mark-light-192.png" alt="" width="38" height="38"><img class="m-dark" src="img/sf-mark-dark-192.png" alt="" width="38" height="38"><b>Sci-Flipper</b><i aria-hidden="true"></i><span class="sf-sub">教師資格考試練習平台</span></a>
+    <div class="nav-wrap">
+      <nav id="nav" aria-label="主選單">
+        <a href="#/practice" data-r="practice" data-i="practice">自由練習</a>
+        <a href="#/mock" data-r="mock" data-i="mock">模擬考</a>
+        <a href="#/notebook" data-r="notebook" data-i="notebook">錯題本<b id="nb-count" hidden></b></a>
+        <a href="#/essay" data-r="essay" data-i="essay">問答題</a>
+        <a href="#/book" data-r="book" data-i="book">專書</a>
+        <a href="#/trend" data-r="trend" data-i="trend" id="nav-trend" hidden>命題趨勢</a>
+        <a href="#/account" data-r="account" data-i="user" id="nav-account" hidden><span>登入</span></a>
+        <a href="#/about" data-r="about" data-i="info">說明</a>
+      </nav>
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="切換深色／淺色外觀" title="切換外觀"></button>
+    </div>
+  </div>
+</header>
+<main id="app" class="wrap" tabindex="-1">
+  <div class="skel" aria-busy="true" aria-label="載入題庫中"><img class="spin" src="img/sf-mark-light-96.png" alt="" width="48" height="48"><i style="height:300px"></i><i style="height:90px"></i><i style="height:180px"></i></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="foot-sf" href="https://sites.google.com/view/sci-flipper/home" target="_blank" rel="noopener" aria-label="Sci-Flipper 翻轉・跨領域・專業學習社群（另開新分頁）">
+      <img class="sf-light" src="img/sf-lockup-light.png" alt="Sci-Flipper" width="88" height="88" loading="lazy">
+      <img class="sf-dark" src="img/sf-lockup-dark.png" alt="" width="88" height="88" loading="lazy">
+      <span><b>Sci-Flipper</b><br>翻轉•跨領域•專業學習社群<br><small>教師資格考試練習平台由本社群提供</small></span>
+    </a>
+    <p>本站為非官方的練習工具，試題與參考答案均取自教育部「高級中等以下學校及幼兒園教師資格考試」官方網站，
+      正式資訊請以<a href="https://tqa.rcpet.edu.tw/TEA_Exam/TEA03.aspx" target="_blank" rel="noopener">官方網站</a>為準。
+      題目文字由 PDF 轉錄，可能有誤，每題都附有原卷頁面可對照。</p>
+    <p class="foot-links"><a href="#/legal">版權與資料來源</a><span aria-hidden="true"> ・ </span><a href="#/about">說明</a></p>
+    <p id="built"></p>
+  </div>
+</footer>
+<script src="data/meta.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/concepts.js"></script>
+<script src="data/guide.js"></script>
+<script src="js/bundle.js"></script>
+<script>
+  // 讓網站可以安裝到手機、離線使用（只在 https 或 localhost 有效）
+  if ("serviceWorker" in navigator && location.protocol !== "file:") {
+    window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js"); });
+  }
+</script>
+</body>
+</html>
