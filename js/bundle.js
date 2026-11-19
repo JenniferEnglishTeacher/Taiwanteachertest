@@ -1209,17 +1209,9 @@ function home() {
   });
 
   app().append(
-    el(
-      "section",
-      { class: "hero2" },
-      el("picture", { class: "hero2-pic" },
-        el("source", { media: "(max-width: 720px)", srcset: "img/hero-mobile.webp" }),
-        el("img", { src: "img/hero-wide.webp", alt: "走廊盡頭，一扇打開的教室門，陽光灑進教室", width: "1600", height: "900", decoding: "async", fetchpriority: "high" })),
-      el("div", { class: "hero2-copy" },
-        el("h1", {}, "願有一天，", el("br"), "你推開教室的門，", el("br"), el("em", {}, "仍記得自己為何出發。")),
-        el("p", { class: "hero2-lead" }, "我們相信，每一位想成為老師的人，", el("br"), "都值得擁有好好準備的機會。", el("br"), "從一道題開始，按照自己的步調，", el("br"), "慢慢走向那間即將相遇的教室。"),
-        el("div", { class: "hero-cta" }, el("a", { class: "btn lg", href: "#/practice" }, "開始練習", icon("arrow")), el("a", { class: "btn lg ghost", href: "#/mock" }, "模擬考試")))
-    ),
+    el("section", { class: "home-cta" },
+      el("a", { class: "btn lg", href: "#/practice" }, "開始練習", icon("arrow")),
+      el("a", { class: "btn lg ghost", href: "#/mock" }, "模擬考試")),
     el("div", { class: "stat-cards" },
       stat("list", "", fmtInt(uniq(m)), "選擇題（不重複）"),
       stat("essay", "teal", fmtInt(uniq(essays())), "問答／綜合題"),

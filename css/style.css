@@ -576,3 +576,6 @@ table.kv tr:last-child th, table.kv tr:last-child td { border-bottom: 0; }
 .bk-read h3 { font-size: 17px; margin: 20px 0 6px; }
 .bk-s { scroll-margin-top: 80px; }
 .bk-q { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 14px; }
+
+.home-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 18px; }
+.home-cta .btn { flex: 1 1 160px; justify-content: center; }
