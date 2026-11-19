@@ -1123,7 +1123,7 @@ function route() {
   app().replaceChildren();
   view();
   const t = TITLES[name] ?? "";
-  document.title = t ? `${t}｜Sci-Flipper 教師資格考試練習平台` : "Sci-Flipper 教師資格考試練習平台｜歷屆試題線上練習";
+  document.title = t ? `${t}｜教師資格考試練習` : "教師資格考試練習";
   refreshBadge();
   window.scrollTo(0, 0);
   app().focus({ preventScroll: true });
