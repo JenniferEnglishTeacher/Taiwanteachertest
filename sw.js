@@ -1,6 +1,6 @@
 // 教師資格考試練習平台：離線用 Service Worker
 // 改了網站檔案後，把 VERSION 數字加 1，手機才會抓新版。
-const VERSION = "v7";
+const VERSION = "v10";
 const CORE = "core-" + VERSION;
 const IMAGES = "images-v4"; // 原卷圖片：看過一次就存起來
 
@@ -10,10 +10,13 @@ const CORE_FILES = [
   "./manifest.json",
   "./css/style.css",
   "./css/sf-bar.css",
+  "./css/cards.css",
   "./data/meta.js",
   "./data/questions.js",
   "./data/concepts.js",
   "./data/guide.js",
+  "./data/cards.js",
+  "./js/cards.js",
   "./js/bundle.js",
   "./img/favicon-32.png",
   "./img/icon-192.png",

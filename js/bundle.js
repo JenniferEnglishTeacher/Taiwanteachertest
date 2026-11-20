@@ -1119,15 +1119,17 @@ function route() {
   keyHandler = null;
   const name = (location.hash.replace(/^#\/?/, "") || "home").split("?")[0];
   document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.dataset.r === name || (name === "quiz" && a.dataset.r === session?.nav)));
-  const view = { book: bookView, home, practice, mock, notebook, essay, trend, about, legal, report, quiz, account }[name] || home;
+  const view = Object.assign({ book: bookView, home, practice, mock, notebook, essay, trend, about, legal, report, quiz, account }, window.__TEP_VIEWS || {})[name] || home;
   app().replaceChildren();
   view();
-  const t = TITLES[name] ?? "";
+  const t = TITLES[name] ?? (window.__TEP_VIEW_TITLES || {})[name] ?? "";
   document.title = t ? `${t}｜教師資格考試練習` : "教師資格考試練習";
   refreshBadge();
   window.scrollTo(0, 0);
   app().focus({ preventScroll: true });
 }
+
+window.__TEP_API = { startQuiz: (o) => startQuiz(o), mcq: () => mcq(), guideOf: (q) => guideOf(q), route: () => route(), mcqCard: (q, o) => mcqCard(q, o), isCorrect: (q, L) => isCorrect(q, L), record: (id, ok) => store.record(id, ok), refreshBadge: () => refreshBadge(), snapshot: () => store.snapshot(), merge: (r) => { store.merge(r); refreshBadge(); } };
 
 function refreshBadge() {
   const n = store.wrongCount();
